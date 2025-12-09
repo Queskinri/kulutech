@@ -383,12 +383,13 @@
 
 .duzenle-btn, .sil-btn {
   flex: 1;
-  padding: 0.7rem;
+  padding: 0.8rem;
   border: none;
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: 0.95rem;
 }
 
 .duzenle-btn {
@@ -472,6 +473,7 @@
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
 }
+
 /* MOBİL RESPONSIVE */
 @media (max-width: 768px) {
   .admin-panel-container {
@@ -488,8 +490,32 @@
     font-size: 1.5rem;
   }
 
+  .cikis-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .esp-ekle-card,
+  .esp-liste-card,
+  .esp-guncelle-card {
+    padding: 1.5rem;
+  }
+
   .form-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .form-grup input {
+    padding: 1.2rem;
+    font-size: 1.1rem;
+  }
+
+  .ekle-btn {
+    padding: 1.2rem;
+    font-size: 1.1rem;
+    min-height: 55px;
   }
 
   .esp-grid {
@@ -505,29 +531,26 @@
     min-width: 100%;
   }
 
+  .arama-kutusu input {
+    padding: 1.2rem 3rem 1.2rem 1.2rem;
+    font-size: 1.1rem;
+  }
+
   .siralama-dropdown {
     width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .siralama-dropdown label {
+    font-size: 1rem;
   }
 
   .siralama-dropdown select {
     width: 100%;
-  }
-
-  /* Input'lar daha büyük */
-  .form-grup input {
+    min-width: 100%;
     padding: 1.2rem;
     font-size: 1.1rem;
-  }
-
-  /* Butonlar daha büyük */
-  .ekle-btn,
-  .guncelle-btn,
-  .iptal-btn,
-  .duzenle-btn,
-  .sil-btn {
-    padding: 1rem;
-    font-size: 1.1rem;
-    min-height: 50px;
   }
 
   .esp-butonlar {
@@ -535,8 +558,39 @@
     gap: 0.8rem;
   }
 
+  .duzenle-btn,
+  .sil-btn {
+    padding: 1rem;
+    font-size: 1rem;
+    min-height: 50px;
+  }
+
   .guncelle-butonlar {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .guncelle-btn,
+  .iptal-btn {
+    padding: 1.2rem;
+    font-size: 1.1rem;
+    min-height: 55px;
+  }
+
+  .esp-veriler {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .veri-item {
+    justify-content: center;
+  }
+
+  .veri-item .ikon {
+    font-size: 1.5rem;
+  }
+
+  .veri-item .deger {
+    font-size: 1.3rem;
   }
 }

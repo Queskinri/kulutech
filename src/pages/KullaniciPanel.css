@@ -14,6 +14,7 @@
 .panel-header h1 {
   color: white;
   font-size: 2rem;
+  margin: 0;
 }
 
 .header-info {
@@ -23,12 +24,13 @@
 }
 
 .esp-id-badge {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-weight: 600;
   font-size: 0.9rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .cikis-btn {
@@ -48,26 +50,27 @@
 }
 
 .panel-content {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
+/* DURUM KARTLARI */
 .durum-card {
   background: white;
   padding: 2rem;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .durum-card.mevcut {
-  border: 3px solid #4CAF50;
+  border-left: 5px solid #4CAF50;
 }
 
 .durum-card.hedef {
-  border: 3px solid #FF9800;
+  border-left: 5px solid #FF9800;
 }
 
 .durum-card h2 {
@@ -75,37 +78,40 @@
   color: #333;
 }
 
-.durum-card.mevcut h2 {
-  color: #4CAF50;
-}
-
-.durum-card.hedef h2 {
-  color: #FF9800;
-}
-
 .aciklama {
   color: #666;
-  margin-bottom: 2rem;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
 }
 
+/* VERİ KARTLARI */
 .veri-kartlari {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
 .veri-kart {
   background: #f8f9fa;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 15px;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  border: 2px solid #e0e0e0;
 }
 
 .veri-kart:hover {
   transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.veri-kart.sicaklik {
+  border-left: 4px solid #ff6b6b;
+}
+
+.veri-kart.nem {
+  border-left: 4px solid #4ecdc4;
 }
 
 .veri-kart .ikon {
@@ -116,66 +122,110 @@
 .veri-kart .deger {
   font-size: 2.5rem;
   font-weight: bold;
+  color: #333;
   margin-bottom: 0.5rem;
-}
-
-.veri-kart.sicaklik .deger {
-  color: #ff6b6b;
-}
-
-.veri-kart.nem .deger {
-  color: #4ecdc4;
 }
 
 .veri-kart .etiket {
   color: #666;
   font-size: 1rem;
+  font-weight: 600;
 }
 
-.hedef-form {
-  background: #fff3e0;
+/* UYARI MESAJI */
+.uyari-card {
+  background: #fff3cd;
   padding: 1.5rem;
   border-radius: 15px;
-  border: 2px solid #FF9800;
+  border-left: 5px solid #ff9800;
+  box-shadow: 0 5px 15px rgba(255, 152, 0, 0.2);
+}
+
+.uyari-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.uyari-ikon {
+  font-size: 1.8rem;
+}
+
+.uyari-header h3 {
+  margin: 0;
+  color: #e65100;
+  font-size: 1.2rem;
+}
+
+.uyari-mesaj {
+  color: #e65100;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* HEDEF FORM */
+.hedef-form {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 15px;
+  border: 2px solid #e0e0e0;
 }
 
 .hedef-form h3 {
-  color: #FF9800;
   margin-bottom: 1.5rem;
+  color: #333;
 }
 
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+/* Input'lar dikey */
+.form-inputs-vertical {
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
-.form-grup label {
+.form-grup-kucuk {
+  width: 100%;
+}
+
+.form-grup-kucuk label {
   display: block;
   margin-bottom: 0.5rem;
   color: #555;
   font-weight: 600;
+  font-size: 1rem;
 }
 
-.form-grup input {
+.form-grup-kucuk input {
   width: 100%;
   padding: 1rem;
   border: 2px solid #ddd;
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   transition: border 0.3s ease;
 }
 
-.form-grup input:focus {
+.form-grup-kucuk input:focus {
   outline: none;
-  border-color: #FF9800;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Butonlar */
+.form-butonlar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .guncelle-btn {
   width: 100%;
   padding: 1.2rem;
-  background: #FF9800;
+  background: #4CAF50;
   color: white;
   border: none;
   border-radius: 10px;
@@ -186,256 +236,39 @@
 }
 
 .guncelle-btn:hover {
-  background: #F57C00;
+  background: #45a049;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
 }
 
-.guncelleme-tarihi {
-  text-align: center;
+.otomatik-btn {
+  width: 100%;
+  padding: 1.2rem;
+  background: #667eea;
   color: white;
-  font-size: 0.9rem;
-}
-
-/* Uyarı Kartı */
-.uyari-card {
-  background: #fff3cd;
-  border: 3px solid #ff9800;
-  border-radius: 20px;
-  padding: 1.5rem;
-  box-shadow: 0 10px 30px rgba(255, 152, 0, 0.3);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 10px 30px rgba(255, 152, 0, 0.3);
-  }
-  50% {
-    box-shadow: 0 10px 40px rgba(255, 152, 0, 0.5);
-  }
-}
-
-.uyari-header {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 1rem;
-}
-
-.uyari-ikon {
-  font-size: 2rem;
-  animation: shake 0.5s infinite;
-}
-
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
-}
-
-.uyari-header h3 {
-  color: #f57c00;
-  margin: 0;
-  font-size: 1.3rem;
-}
-
-.uyari-mesaj {
-  color: #e65100;
+  border: none;
+  border-radius: 10px;
   font-size: 1.1rem;
   font-weight: 600;
-  margin: 0;
-  line-height: 1.6;
-}/* Hayvan Seçici */
-.hayvan-secici {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  margin: 2rem 0;
-  padding: 1.5rem;
-  background: white;
-  border-radius: 15px;
-}
-
-.ok-btn {
-  background: #FF9800;
-  color: white;
-  border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.ok-btn:hover {
-  background: #F57C00;
-  transform: scale(1.1);
+.otomatik-btn:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
-.ok-btn:active {
-  transform: scale(0.95);
-}
-
-.hayvan-kart {
+/* GÜNCELLEME TARİHİ */
+.guncelleme-tarihi {
   text-align: center;
-  padding: 1rem;
-}
-
-.hayvan-foto {
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
-  border-radius: 15px;
-  background: #f8f9fa;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-
-.hayvan-isim {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #333;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
   margin: 0;
 }
 
-.hayvan-degerler {
-  display: block;
-  font-size: 0.9rem;
-  color: #FF9800;
-  font-weight: 600;
-  margin-top: 0.3rem;
-}
-
-/* Form Container */
-.form-container {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  align-items: flex-end;
-}
-
-.form-inputs {
-  display: flex;
-  gap: 1rem;
-  flex: 1;
-}
-
-.form-grup-kucuk {
-  flex: 1;
-}
-
-.form-grup-kucuk label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #555;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.form-grup-kucuk input {
-  width: 100%;
-  padding: 0.8rem;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  font-size: 1rem;
-  transition: border 0.3s ease;
-}
-
-.form-grup-kucuk input:focus {
-  outline: none;
-  border-color: #FF9800;
-}
-
-.otomatik-btn {
-  padding: 0.8rem 1.5rem;
-  background: #2196F3;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  min-width: 130px;
-}
-
-.otomatik-btn small {
-  font-size: 0.75rem;
-  opacity: 0.9;
-}
-
-.otomatik-btn:hover {
-  background: #1976D2;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
-} /* Form Container - Yeniden Düzenlendi */
-.form-container {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  align-items: flex-end;
-}
-
-.form-inputs {
-  display: flex;
-  gap: 1rem;
-  flex: 1;
-}
-
-.form-grup-kucuk {
-  flex: 1;
-}
-
-.form-grup-kucuk label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #555;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.form-grup-kucuk input {
-  width: 100%;
-  padding: 0.8rem;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  font-size: 1rem;
-  transition: border 0.3s ease;
-}
-
-.form-grup-kucuk input:focus {
-  outline: none;
-  border-color: #FF9800;
-}
-
-.otomatik-btn {
-  padding: 0.8rem 1.5rem;
-  background: #2196F3;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  min-width: 120px;
-}
-
-.otomatik-btn:hover {
-  background: #1976D2;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
-}
-
-/* Modal */
+/* MODAL */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -447,34 +280,18 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  padding: 1rem;
 }
 
 .modal-content {
   background: white;
-  border-radius: 20px;
   padding: 2rem;
-  max-width: 800px;
+  border-radius: 20px;
   width: 90%;
+  max-width: 600px;
   max-height: 80vh;
   overflow-y: auto;
-  animation: slideUp 0.3s ease;
-}
-
-@keyframes slideUp {
-  from { 
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to { 
-    opacity: 1;
-    transform: translateY(0);
-  }
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .modal-header {
@@ -482,79 +299,83 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e0e0e0;
 }
 
 .modal-header h2 {
-  color: #333;
   margin: 0;
+  color: #333;
 }
 
 .modal-kapat {
-  background: none;
+  background: #f44336;
+  color: white;
   border: none;
-  font-size: 2rem;
-  color: #999;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 1.5rem;
   cursor: pointer;
-  transition: color 0.3s ease;
-  padding: 0;
-  width: 40px;
-  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .modal-kapat:hover {
-  color: #f44336;
+  background: #da190b;
+  transform: rotate(90deg);
 }
 
+/* HAYVAN KARTLARI */
 .hayvan-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
 .hayvan-kart-modal {
   background: #f8f9fa;
-  border: 3px solid #e0e0e0;
-  border-radius: 15px;
   padding: 1.5rem;
+  border-radius: 15px;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  border: 3px solid transparent;
   position: relative;
 }
 
 .hayvan-kart-modal:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .hayvan-kart-modal.secili {
   border-color: #4CAF50;
   background: #e8f5e9;
+  box-shadow: 0 5px 20px rgba(76, 175, 80, 0.3);
 }
 
 .hayvan-foto {
-  width: 120px;
+  width: 100%;
   height: 120px;
   object-fit: contain;
   margin-bottom: 1rem;
-  border-radius: 10px;
 }
 
 .hayvan-kart-modal h3 {
-  color: #333;
   margin: 0 0 0.5rem 0;
-  font-size: 1.3rem;
+  color: #333;
+  font-size: 1.2rem;
 }
 
 .hayvan-degerler {
   color: #666;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
   margin: 0;
+  line-height: 1.6;
 }
 
 .secim-badge {
@@ -565,17 +386,19 @@
   color: white;
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
 }
 
+/* MODAL BUTONLAR */
 .modal-butonlar {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 1rem;
 }
 
-.uygula-btn, .iptal-btn {
+.uygula-btn,
+.iptal-btn {
+  flex: 1;
   padding: 1rem;
   border: none;
   border-radius: 10px;
@@ -611,6 +434,7 @@
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
 }
+
 /* MOBİL RESPONSIVE */
 @media (max-width: 768px) {
   .panel-container {
@@ -643,14 +467,9 @@
     font-size: 2.5rem;
   }
 
-  /* Form daha büyük */
-  .form-inputs {
-    flex-direction: column;
+  /* Form mobilde zaten dikey, değişiklik yok */
+  .form-inputs-vertical {
     gap: 1rem;
-  }
-
-  .form-grup-kucuk {
-    width: 100%;
   }
 
   .form-grup-kucuk input {
@@ -658,15 +477,8 @@
     font-size: 1.1rem;
   }
 
-  .form-container {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  /* Butonlar daha büyük */
   .guncelle-btn,
-  .otomatik-btn,
-  .cikis-btn {
+  .otomatik-btn {
     padding: 1.2rem;
     font-size: 1.1rem;
     min-height: 55px;

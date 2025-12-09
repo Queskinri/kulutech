@@ -214,38 +214,38 @@ const KullaniciPanel: React.FC = () => {
           <div className="hedef-form">
             <h3>Hedefi Değiştir</h3>
             
-            <div className="form-container">
-              <div className="form-inputs">
-                <div className="form-grup-kucuk">
-                  <label>Sıcaklık (°C)</label>
-                  <input 
-                    type="number" 
-                    step="0.1"
-                    placeholder="37.5"
-                    value={yeniHedefSicaklik}
-                    onChange={(e) => setYeniHedefSicaklik(e.target.value)}
-                  />
-                </div>
-
-                <div className="form-grup-kucuk">
-                  <label>Nem (%)</label>
-                  <input 
-                    type="number" 
-                    placeholder="55"
-                    value={yeniHedefNem}
-                    onChange={(e) => setYeniHedefNem(e.target.value)}
-                  />
-                </div>
+            <div className="form-inputs-vertical">
+              <div className="form-grup-kucuk">
+                <label>Sıcaklık (°C)</label>
+                <input 
+                  type="number" 
+                  step="0.1"
+                  placeholder="37.5"
+                  value={yeniHedefSicaklik}
+                  onChange={(e) => setYeniHedefSicaklik(e.target.value)}
+                />
               </div>
 
-              <button className="otomatik-btn" onClick={otomatikModalAc}>
-                🎯 Otomatik
-              </button>
+              <div className="form-grup-kucuk">
+                <label>Nem (%)</label>
+                <input 
+                  type="number" 
+                  placeholder="55"
+                  value={yeniHedefNem}
+                  onChange={(e) => setYeniHedefNem(e.target.value)}
+                />
+              </div>
             </div>
 
-            <button className="guncelle-btn" onClick={hedefGuncelle}>
-              ✅ Hedefi Güncelle
-            </button>
+            <div className="form-butonlar">
+              <button className="guncelle-btn" onClick={hedefGuncelle}>
+                ✅ Hedefi Güncelle
+              </button>
+              
+              <button className="otomatik-btn" onClick={otomatikModalAc}>
+                🎯 Otomatik Ayarla
+              </button>
+            </div>
           </div>
         </div>
 
