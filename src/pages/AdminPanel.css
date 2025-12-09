@@ -1,0 +1,474 @@
+.admin-panel-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.admin-header h1 {
+  color: white;
+  font-size: 2rem;
+}
+
+.admin-kullanici {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0 0;
+}
+
+.admin-kullanici strong {
+  color: white;
+}
+
+.cikis-btn {
+  padding: 0.8rem 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cikis-btn:hover {
+  background: white;
+  color: #667eea;
+}
+
+.admin-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ESP Ekle Card */
+.esp-ekle-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.esp-ekle-card h2 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.bilgi-text {
+  background: #e3f2fd;
+  padding: 0.8rem;
+  border-radius: 8px;
+  color: #1976D2;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-grup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: 600;
+}
+
+.form-grup input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.form-grup input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.ekle-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ekle-btn:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+/* ESP Liste Card */
+.esp-liste-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Liste Header */
+.liste-header {
+  margin-bottom: 1.5rem;
+}
+
+.liste-header h2 {
+  margin: 0 0 1rem 0;
+  color: #333;
+}
+
+.liste-kontroller {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Arama Kutusu */
+.arama-kutusu {
+  position: relative;
+  flex: 1;
+  min-width: 250px;
+}
+
+.arama-kutusu input {
+  width: 100%;
+  padding: 0.8rem 2.5rem 0.8rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.arama-kutusu input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.arama-kutusu input::placeholder {
+  color: #999;
+}
+
+.temizle-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #f44336;
+  color: white;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.temizle-btn:hover {
+  background: #da190b;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Sıralama Dropdown */
+.siralama-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.siralama-dropdown label {
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.siralama-dropdown select {
+  padding: 0.8rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: white;
+  transition: border 0.3s ease;
+  min-width: 200px;
+}
+
+.siralama-dropdown select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.siralama-dropdown select:hover {
+  border-color: #999;
+}
+
+/* Boş Mesaj */
+.bos-mesaj {
+  text-align: center;
+  color: #999;
+  padding: 3rem 2rem;
+  font-size: 1.1rem;
+  background: #f8f9fa;
+  border-radius: 15px;
+  border: 2px dashed #ddd;
+}
+
+.esp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.esp-kart {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 15px;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.esp-kart:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.esp-header-kart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.esp-header-kart h3 {
+  color: #333;
+  margin: 0;
+}
+
+.esp-id {
+  background: #667eea;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ESP Durum Kartları */
+.esp-durum {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.esp-durum.mevcut {
+  border-left: 4px solid #4CAF50;
+}
+
+.esp-durum.hedef {
+  border-left: 4px solid #FF9800;
+}
+
+.esp-durum h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  color: #666;
+}
+
+.esp-durum.mevcut h4 {
+  color: #4CAF50;
+}
+
+.esp-durum.hedef h4 {
+  color: #FF9800;
+}
+
+.esp-veriler {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.veri-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.veri-item .ikon {
+  font-size: 1.3rem;
+}
+
+.veri-item .deger {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ESP Uyarı */
+.esp-uyari {
+  background: #fff3cd;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border-left: 4px solid #ff9800;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.esp-uyari .uyari-ikon {
+  font-size: 1.2rem;
+}
+
+.esp-uyari .uyari-text {
+  color: #e65100;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Tarih Bilgisi */
+.tarih-bilgi {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  color: #666;
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.tarih-bilgi span {
+  display: block;
+}
+
+.tarih-bilgi strong {
+  color: #667eea;
+  font-weight: 700;
+}
+
+.esp-butonlar {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.duzenle-btn, .sil-btn {
+  flex: 1;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.duzenle-btn {
+  background: #2196F3;
+  color: white;
+}
+
+.duzenle-btn:hover {
+  background: #0b7dda;
+  transform: translateY(-2px);
+}
+
+.sil-btn {
+  background: #f44336;
+  color: white;
+}
+
+.sil-btn:hover {
+  background: #da190b;
+  transform: translateY(-2px);
+}
+
+/* ESP Güncelle Card */
+.esp-guncelle-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  border: 3px solid #FF9800;
+}
+
+.esp-guncelle-card h2 {
+  margin-bottom: 1rem;
+  color: #FF9800;
+}
+
+.tip-aciklama {
+  background: #fff3e0;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  color: #e65100;
+  font-size: 0.95rem;
+  border-left: 4px solid #FF9800;
+}
+
+.guncelle-butonlar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.guncelle-btn, .iptal-btn {
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.guncelle-btn {
+  background: #FF9800;
+  color: white;
+}
+
+.guncelle-btn:hover {
+  background: #F57C00;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+}
+
+.iptal-btn {
+  background: #f44336;
+  color: white;
+}
+
+.iptal-btn:hover {
+  background: #da190b;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
+}

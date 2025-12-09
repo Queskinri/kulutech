@@ -1,0 +1,613 @@
+.panel-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.panel-header h1 {
+  color: white;
+  font-size: 2rem;
+}
+
+.header-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.esp-id-badge {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.cikis-btn {
+  padding: 0.8rem 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cikis-btn:hover {
+  background: white;
+  color: #667eea;
+}
+
+.panel-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.durum-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.durum-card.mevcut {
+  border: 3px solid #4CAF50;
+}
+
+.durum-card.hedef {
+  border: 3px solid #FF9800;
+}
+
+.durum-card h2 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.durum-card.mevcut h2 {
+  color: #4CAF50;
+}
+
+.durum-card.hedef h2 {
+  color: #FF9800;
+}
+
+.aciklama {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.veri-kartlari {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.veri-kart {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.veri-kart:hover {
+  transform: translateY(-5px);
+}
+
+.veri-kart .ikon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.veri-kart .deger {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.veri-kart.sicaklik .deger {
+  color: #ff6b6b;
+}
+
+.veri-kart.nem .deger {
+  color: #4ecdc4;
+}
+
+.veri-kart .etiket {
+  color: #666;
+  font-size: 1rem;
+}
+
+.hedef-form {
+  background: #fff3e0;
+  padding: 1.5rem;
+  border-radius: 15px;
+  border: 2px solid #FF9800;
+}
+
+.hedef-form h3 {
+  color: #FF9800;
+  margin-bottom: 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-grup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: 600;
+}
+
+.form-grup input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.form-grup input:focus {
+  outline: none;
+  border-color: #FF9800;
+}
+
+.guncelle-btn {
+  width: 100%;
+  padding: 1.2rem;
+  background: #FF9800;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.guncelle-btn:hover {
+  background: #F57C00;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+}
+
+.guncelleme-tarihi {
+  text-align: center;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Uyarı Kartı */
+.uyari-card {
+  background: #fff3cd;
+  border: 3px solid #ff9800;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(255, 152, 0, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 10px 30px rgba(255, 152, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 10px 40px rgba(255, 152, 0, 0.5);
+  }
+}
+
+.uyari-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.uyari-ikon {
+  font-size: 2rem;
+  animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.uyari-header h3 {
+  color: #f57c00;
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.uyari-mesaj {
+  color: #e65100;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.6;
+}/* Hayvan Seçici */
+.hayvan-secici {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 15px;
+}
+
+.ok-btn {
+  background: #FF9800;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ok-btn:hover {
+  background: #F57C00;
+  transform: scale(1.1);
+}
+
+.ok-btn:active {
+  transform: scale(0.95);
+}
+
+.hayvan-kart {
+  text-align: center;
+  padding: 1rem;
+}
+
+.hayvan-foto {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 15px;
+  background: #f8f9fa;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hayvan-isim {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.hayvan-degerler {
+  display: block;
+  font-size: 0.9rem;
+  color: #FF9800;
+  font-weight: 600;
+  margin-top: 0.3rem;
+}
+
+/* Form Container */
+.form-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-end;
+}
+
+.form-inputs {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+}
+
+.form-grup-kucuk {
+  flex: 1;
+}
+
+.form-grup-kucuk label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form-grup-kucuk input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.form-grup-kucuk input:focus {
+  outline: none;
+  border-color: #FF9800;
+}
+
+.otomatik-btn {
+  padding: 0.8rem 1.5rem;
+  background: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: 130px;
+}
+
+.otomatik-btn small {
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
+.otomatik-btn:hover {
+  background: #1976D2;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+} /* Form Container - Yeniden Düzenlendi */
+.form-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-end;
+}
+
+.form-inputs {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+}
+
+.form-grup-kucuk {
+  flex: 1;
+}
+
+.form-grup-kucuk label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form-grup-kucuk input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.form-grup-kucuk input:focus {
+  outline: none;
+  border-color: #FF9800;
+}
+
+.otomatik-btn {
+  padding: 0.8rem 1.5rem;
+  background: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: 120px;
+}
+
+.otomatik-btn:hover {
+  background: #1976D2;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 800px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.modal-header h2 {
+  color: #333;
+  margin: 0;
+}
+
+.modal-kapat {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-kapat:hover {
+  color: #f44336;
+}
+
+.hayvan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.hayvan-kart-modal {
+  background: #f8f9fa;
+  border: 3px solid #e0e0e0;
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.hayvan-kart-modal:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.hayvan-kart-modal.secili {
+  border-color: #4CAF50;
+  background: #e8f5e9;
+}
+
+.hayvan-foto {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+.hayvan-kart-modal h3 {
+  color: #333;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+}
+
+.hayvan-degerler {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.secim-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #4CAF50;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.modal-butonlar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.uygula-btn, .iptal-btn {
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.uygula-btn {
+  background: #4CAF50;
+  color: white;
+}
+
+.uygula-btn:hover:not(:disabled) {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+.uygula-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.iptal-btn {
+  background: #f44336;
+  color: white;
+}
+
+.iptal-btn:hover {
+  background: #da190b;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
+}
