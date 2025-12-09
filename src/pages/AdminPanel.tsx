@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './AdminPanel.css';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+
 interface ESP {
   id: string;
   isim: string;
@@ -43,7 +45,7 @@ const AdminPanel: React.FC = () => {
   }, [siralama]);
 
   const veriCek = () => {
-    fetch(`http://localhost:5001/api/esp/list?siralama=${siralama}`)
+    fetch(`${API_URL}/api/esp/list?siralama=${siralama}`)
       .then(res => res.json())
       .then(data => setEspList(data))
       .catch(err => console.error('ESP listesi çekme hatası:', err));
@@ -64,7 +66,7 @@ const AdminPanel: React.FC = () => {
     if (yeniEspId && yeniEspIsim) {
       const adminKullanici = localStorage.getItem('adminKullanici') || 'bilinmiyor';
       
-      fetch('http://localhost:5001/api/esp/add', {
+      fetch(`${API_URL}/api/esp/add`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
@@ -99,7 +101,7 @@ const AdminPanel: React.FC = () => {
   // ESP sil
   const espSil = (espId: string) => {
     if (window.confirm('Bu ESP\'yi silmek istediğinize emin misiniz?')) {
-      fetch(`http://localhost:5001/api/esp/delete/${espId}`, {
+      fetch(`${API_URL}/api/esp/delete/${espId}`, {
         method: 'DELETE'
       })
         .then(res => res.json())
@@ -114,7 +116,7 @@ const AdminPanel: React.FC = () => {
   // ESP hedef değerlerini ve uyarı mesajını güncelle
   const espGuncelle = () => {
     if (seciliEsp && yeniSicaklik && yeniNem) {
-      fetch(`http://localhost:5001/api/esp/update-hedef/${seciliEsp}`, {
+      fetch(`${API_URL}/api/esp/update-hedef/${seciliEsp}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
@@ -124,7 +126,7 @@ const AdminPanel: React.FC = () => {
       })
         .then(res => res.json())
         .then(data => {
-          return fetch(`http://localhost:5001/api/esp/update-mevcut/${seciliEsp}`, {
+          return fetch(`${API_URL}/api/esp/update-mevcut/${seciliEsp}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
@@ -202,7 +204,7 @@ const AdminPanel: React.FC = () => {
         </button>
       </div>
 
-      {/* 👇 ESP HEDEF GÜNCELLE - BURAYA TAŞINDI */}
+      {/* ESP HEDEF GÜNCELLE */}
       {seciliEsp && (
         <div className="esp-guncelle-card">
           <h2>🎯 Hedef Değerleri Düzenle: {espList.find(e => e.id === seciliEsp)?.isim}</h2>
@@ -268,7 +270,6 @@ const AdminPanel: React.FC = () => {
           <h2>📋 ESP Cihazları ({filtrelenmisEspList.length} / {espList.length})</h2>
           
           <div className="liste-kontroller">
-            {/* Arama Kutusu */}
             <div className="arama-kutusu">
               <input
                 type="text"
@@ -286,7 +287,6 @@ const AdminPanel: React.FC = () => {
               )}
             </div>
 
-            {/* Sıralama Dropdown */}
             <div className="siralama-dropdown">
               <label>Sıralama:</label>
               <select 
@@ -318,7 +318,6 @@ const AdminPanel: React.FC = () => {
                   <span className="esp-id">{esp.id}</span>
                 </div>
                 
-                {/* Mevcut Durum */}
                 <div className="esp-durum mevcut">
                   <h4>📊 Mevcut (ESP'den Gelen)</h4>
                   <div className="esp-veriler">
@@ -333,7 +332,6 @@ const AdminPanel: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Hedef Durum */}
                 <div className="esp-durum hedef">
                   <h4>🎯 Hedef (ESP'ye Gidecek)</h4>
                   <div className="esp-veriler">
@@ -348,7 +346,6 @@ const AdminPanel: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Uyarı Mesajı */}
                 {esp.uyariMesaji && (
                   <div className="esp-uyari">
                     <span className="uyari-ikon">⚠️</span>
@@ -356,7 +353,6 @@ const AdminPanel: React.FC = () => {
                   </div>
                 )}
 
-                {/* Tarih Bilgisi */}
                 <div className="tarih-bilgi">
                   <span>👤 Oluşturan: <strong>{esp.olusturanAdmin}</strong></span>
                   <span>🕒 Oluşturma: {new Date(esp.olusturmaTarihi).toLocaleString('tr-TR')}</span>

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './AdminGiris.css';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+
 const AdminGiris: React.FC = () => {
   const [kullaniciAdi, setKullaniciAdi] = useState('');
   const [sifre, setSifre] = useState('');
@@ -16,7 +18,7 @@ const AdminGiris: React.FC = () => {
     }
 
     // Backend'e giriş isteği gönder
-    fetch('http://localhost:5001/api/admin/giris', {
+    fetch(`${API_URL}/api/admin/giris`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ kullaniciAdi, sifre })
@@ -75,8 +77,6 @@ const AdminGiris: React.FC = () => {
             ← Geri
           </button>
         </div>
-
-    
       </div>
     </div>
   );

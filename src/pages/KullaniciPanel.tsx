@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './KullaniciPanel.css';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+
 // Fotoları require ile import et
 const bildircinImg = require('../photo/bildircin.png');
 const ordekImg = require('../photo/ordek.png');
@@ -67,7 +69,7 @@ const KullaniciPanel: React.FC = () => {
   }, [navigate]);
 
   const veriCek = (espId: string) => {
-    fetch(`http://localhost:5001/api/esp/${espId}`)
+    fetch(`${API_URL}/api/esp/${espId}`)
       .then(res => res.json())
       .then(data => {
         setVeri({
@@ -88,7 +90,7 @@ const KullaniciPanel: React.FC = () => {
     const espId = localStorage.getItem('espId');
     
     if (yeniHedefSicaklik && yeniHedefNem && espId) {
-      fetch(`http://localhost:5001/api/esp/update-hedef/${espId}`, {
+      fetch(`${API_URL}/api/esp/update-hedef/${espId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 

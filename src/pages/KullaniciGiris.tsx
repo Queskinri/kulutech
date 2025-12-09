@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './KullaniciGiris.css';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+
 const KullaniciGiris: React.FC = () => {
   const [kullaniciKodu, setKullaniciKodu] = useState('');
   const [hata, setHata] = useState('');
@@ -9,7 +11,7 @@ const KullaniciGiris: React.FC = () => {
 
   const girisYap = () => {
     // Backend'den ESP'nin var olup olmadığını kontrol et
-    fetch(`http://localhost:5001/api/esp/${kullaniciKodu}`)
+    fetch(`${API_URL}/api/esp/${kullaniciKodu}`)
       .then(res => {
         if (res.ok) {
           return res.json();
